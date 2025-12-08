@@ -1,0 +1,15 @@
+[project]
+name = "mcp-hol-build-2025-ja"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langchain-mcp-adapters>=0.1.14",
+    "langchain-openai==0.3.30",
+    "langchain-snowflake==0.2.2",
+    "trulens-apps-langgraph>=2.4.2",
+    "trulens-connectors-snowflake>=2.5.1",
+    "trulens-core>=2.5.1",
+    "trulens-providers-cortex>=2.5.1",
+]
