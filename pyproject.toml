@@ -5,9 +5,12 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "grandalf>=0.8",
     "langchain-mcp-adapters>=0.1.14",
     "langchain-openai==0.3.30",
     "langchain-snowflake==0.2.2",
+    "nest-asyncio>=1.6.0",
+    "pyppeteer>=2.0.0",
     "trulens-apps-langgraph>=2.4.2",
     "trulens-connectors-snowflake>=2.5.1",
     "trulens-core>=2.5.1",
