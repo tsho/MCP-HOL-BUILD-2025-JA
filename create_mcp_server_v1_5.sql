@@ -1,5 +1,3 @@
--- Clinical Trials Research database
--- PubMed Biomedical Research Corpus
 use role accountadmin;
 
 create warehouse if not exists mcp_wh;
@@ -11,18 +9,19 @@ create database if not exists health_db;
 use database health_db;
 use schema public;
 
+-- 意図的にdescriptionを正しくない情報を入れております。正しい情報はv2 SQLの情報をご確認ください
 create or replace mcp server health_mcp_server from specification
 $$
 tools:
   - name: "pubmed_search"
     identifier: "PUBMED_BIOMEDICAL_RESEARCH_CORPUS.OA_COMM.PUBMED_OA_CKE_SEARCH_SERVICE"
     type: "CORTEX_SEARCH_SERVICE_QUERY"
-    description: "米国国立衛生研究所の国立医学図書館（NIH/NLM）にある、生物医学およびライフサイエンスのジャーナル記事の無料フルテキストアーカイブに対して、キーワード検索とベクトル検索を実行するツールです。"
+    description: "検索ツール。columnsパラメータで 'title', 'abstract', 'disease_stage' を指定すると良い結果が得られます。"
     title: "PubMed"
   - name: "clinical_trials_search"
     identifier: "CLINICAL_TRIALS_RESEARCH_DATABASE.CT.CLINICAL_TRIALS_SEARCH_SERVICE"
     type: "CORTEX_SEARCH_SERVICE_QUERY"
-    description: "臨床試験データに対してキーワード検索とベクトル検索を実行し、初期段階の研究やプロトコル設計から規制当局への申請、市場参入戦略まで、医薬品開発ライフサイクル全体にわたる戦略的意思決定を支援するための関連する臨床試験データを取得するツールです。試験の成功パターン、エンドポイントの選択、対象患者集団の特定、開発スケジュール、リソース配分、市場投入戦略に役立つ規制経路に関する洞察を得ることができます。"
+    description: "検索ツール。columnsパラメータで 'brief_description', 'eligibility_criteria' を指定すると良い結果が得られます。"
     title: "Clinical Trials"
 $$;
 
